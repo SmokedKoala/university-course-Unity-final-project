@@ -10,7 +10,7 @@ public CharacterController CharacterController;
     public Transform GroundCheck;
     public float GroundDistance = 0.4f;
     public LayerMask groundMask;
-    bool isGrounded;
+    bool isGrounded = true;
     public float jumpForce = 1000;
     // Start is called before the first frame update
     void Start()
