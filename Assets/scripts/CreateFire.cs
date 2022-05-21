@@ -5,7 +5,7 @@ using UnityEngine;
 public class CreateFire : MonoBehaviour
 {
     public string tagName;
-    private int num;
+    private int num = 0;
     public GameObject Prefab;
     // Start is called before the first frame update
     void Start()
@@ -16,7 +16,7 @@ public class CreateFire : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (num == 2){
+        if (num > 2){
             createFire();
         }
     }
@@ -26,6 +26,7 @@ public class CreateFire : MonoBehaviour
         if (coll.gameObject.tag == tagName){
             num++;
             Destroy(coll.gameObject);
+            Debug.Log(num);
         }
     }
 
