@@ -29,8 +29,8 @@ public class GetWarm : MonoBehaviour
         if (coll.gameObject.tag == tagName){
             if (getWarm) {
                 coll.gameObject.GetComponent<PlayerCharacteristics>().warm += 30;
-                if (coll.gameObject.GetComponent<PlayerCharacteristics>().warm > 101) {
-                    coll.gameObject.GetComponent<PlayerCharacteristics>().warm = 101;
+                if (coll.gameObject.GetComponent<PlayerCharacteristics>().warm > 100) {
+                    coll.gameObject.GetComponent<PlayerCharacteristics>().warm = 100;
                 }
             }
         }

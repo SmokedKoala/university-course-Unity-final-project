@@ -24,12 +24,12 @@ public class PlayerCharacteristics : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        hungerView.text = hunger.ToString();
+        warmView.text = warm.ToString();
         time += Time.deltaTime;
         if (time >= interpolationPeriod) {
             hunger -= 1;
             warm -= 1;
-            hungerView.text = hunger.ToString();
-            warmView.text = warm.ToString();
             time = 0.0f;
         }
     }

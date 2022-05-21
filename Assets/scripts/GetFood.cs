@@ -22,8 +22,8 @@ public class GetFood : MonoBehaviour
         if (coll.gameObject.tag == tagName){
             if (Input.GetKeyDown(KeyCode.E)){
                 coll.gameObject.GetComponent<PlayerCharacteristics>().hunger += 30;
-                if (coll.gameObject.GetComponent<PlayerCharacteristics>().hunger > 101) {
-                    coll.gameObject.GetComponent<PlayerCharacteristics>().hunger = 101;
+                if (coll.gameObject.GetComponent<PlayerCharacteristics>().hunger > 100) {
+                    coll.gameObject.GetComponent<PlayerCharacteristics>().hunger = 100;
                 }
                 Destroy(this.gameObject);
             }
