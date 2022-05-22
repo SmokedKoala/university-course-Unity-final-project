@@ -15,7 +15,7 @@ public class MoveObjectByMouse : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
     private void OnMouseDown() {
         MouseZCoord = Camera.main.WorldToScreenPoint(gameObject.transform.position).z;
