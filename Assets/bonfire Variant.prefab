@@ -85,6 +85,22 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.18567
       objectReference: {fileID: 0}
+    - target: {fileID: 2967024782847851692, guid: b4e05b86688c5493db1dc78b2b6f3839, type: 3}
+      propertyPath: LightsModule.light
+      value: 
+      objectReference: {fileID: 3610183649904732086, guid: f0a42ef3fafecb444bb97c8145ee5dab, type: 3}
+    - target: {fileID: 2967024782847851692, guid: b4e05b86688c5493db1dc78b2b6f3839, type: 3}
+      propertyPath: LightsModule.ratio
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2967024782847851692, guid: b4e05b86688c5493db1dc78b2b6f3839, type: 3}
+      propertyPath: LightsModule.enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2967024782847851692, guid: b4e05b86688c5493db1dc78b2b6f3839, type: 3}
+      propertyPath: LightsModule.rangeCurve.scalar
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 2967024782847851694, guid: b4e05b86688c5493db1dc78b2b6f3839, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.2295
