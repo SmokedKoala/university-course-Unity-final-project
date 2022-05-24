@@ -16,7 +16,7 @@ public class CreateFire : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (num > 2){
+        if (num >= 2){
             createFire();
         }
     }
