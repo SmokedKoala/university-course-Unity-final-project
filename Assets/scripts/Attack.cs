@@ -6,20 +6,23 @@ public class Attack : MonoBehaviour
 {
 
     Animator anim;
+    private int current_tool = 0;
 
-    // Start is called before the first frame update
+    private SwitchTools tools;
+
     void Start()
     {
         anim = GetComponent<Animator>();
+        tools = GameObject.Find("tools").GetComponent<SwitchTools>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (Input.GetMouseButtonDown(0))
         {
-            Debug.Log("attack");
-            anim.SetTrigger("knife_attack_trigger");
+            current_tool = tools.selectedTool;
+            if (current_tool == 1)
+                anim.SetTrigger("knife_attack_trigger");
         }
     }
 }
