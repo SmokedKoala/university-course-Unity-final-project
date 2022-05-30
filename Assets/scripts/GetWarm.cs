@@ -5,7 +5,7 @@ using UnityEngine;
 public class GetWarm : MonoBehaviour
 {
     public string tagName;
-    private bool getWarm;    
+    private bool getWarm;
     private float time = 0.0f;
     private float interpolationPeriod = 2.0f;
     // Start is called before the first frame update
@@ -18,18 +18,22 @@ public class GetWarm : MonoBehaviour
     void Update()
     {
         time += Time.deltaTime;
-        if (time >= interpolationPeriod) {
+        if (time >= interpolationPeriod)
+        {
             getWarm = !getWarm;
             time = 0.0f;
         }
     }
 
-        private void OnTriggerStay(Collider coll)
+    private void OnTriggerStay(Collider coll)
     {
-        if (coll.gameObject.tag == tagName){
-            if (getWarm) {
+        if (coll.gameObject.tag == tagName)
+        {
+            if (getWarm)
+            {
                 coll.gameObject.GetComponent<PlayerCharacteristics>().warm += 30;
-                if (coll.gameObject.GetComponent<PlayerCharacteristics>().warm > 100) {
+                if (coll.gameObject.GetComponent<PlayerCharacteristics>().warm > 100)
+                {
                     coll.gameObject.GetComponent<PlayerCharacteristics>().warm = 100;
                 }
             }

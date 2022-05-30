@@ -4,20 +4,19 @@ using UnityEngine;
 
 public class GrabAndDrop : MonoBehaviour
 {
-    public Transform player;
-    public Transform playerCam;
+    Transform player;
+    Transform playerCam;
     public float throwForce = 100;
     bool hasPlayer = false;
     bool beingCarried = false;
     private bool touched = false;
 
-    // Start is called before the first frame update
     void Start()
     {
-
+        player = PlayerManager.instance.player.transform;
+        playerCam = player.Find("body").Find("Main Camera");
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (beingCarried)

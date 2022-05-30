@@ -8,21 +8,24 @@ public class GetFood : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     private void OnTriggerStay(Collider coll)
     {
-        if (coll.gameObject.tag == tagName){
-            if (Input.GetKeyDown(KeyCode.E)){
+        if (coll.gameObject.tag == tagName)
+        {
+            if (Input.GetKeyDown(KeyCode.E))
+            {
                 coll.gameObject.GetComponent<PlayerCharacteristics>().hunger += 30;
-                if (coll.gameObject.GetComponent<PlayerCharacteristics>().hunger > 100) {
+                if (coll.gameObject.GetComponent<PlayerCharacteristics>().hunger > 100)
+                {
                     coll.gameObject.GetComponent<PlayerCharacteristics>().hunger = 100;
                 }
                 Destroy(this.gameObject);

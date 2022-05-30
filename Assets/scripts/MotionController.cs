@@ -2,8 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MotionController : MonoBehaviour {
-public CharacterController CharacterController;
+public class MotionController : MonoBehaviour
+{
+    public CharacterController CharacterController;
     public float speed = 12f;
     public float gravity = -9.8f;
     Vector3 velocity;
@@ -15,7 +16,7 @@ public CharacterController CharacterController;
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -29,7 +30,7 @@ public CharacterController CharacterController;
         CharacterController.Move(move * speed * Time.deltaTime);
 
         velocity.y += gravity + Time.deltaTime;
-        CharacterController.Move((velocity * Time.deltaTime)/2);
+        CharacterController.Move((velocity * Time.deltaTime) / 2);
 
         isGrounded = Physics.CheckSphere(GroundCheck.position, GroundDistance, groundMask);
 
