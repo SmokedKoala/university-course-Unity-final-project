@@ -27,7 +27,8 @@ public class PlayerCharacteristics : MonoBehaviour
         hungerView.text = hunger.ToString();
         warmView.text = warm.ToString();
         time += Time.deltaTime;
-        if (time >= interpolationPeriod) {
+        if (time >= interpolationPeriod)
+        {
             hunger -= 1;
             warm -= 1;
             time = 0.0f;

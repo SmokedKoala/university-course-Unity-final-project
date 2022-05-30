@@ -5,25 +5,23 @@ using UnityEngine;
 public class GetFood : MonoBehaviour
 {
     public string tagName;
-    // Start is called before the first frame update
+    private PlayerStats playerStats;
     void Start()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        playerStats = PlayerManager.instance.player.GetComponent<PlayerStats>();
     }
 
     private void OnTriggerStay(Collider coll)
     {
-        if (coll.gameObject.tag == tagName){
-            if (Input.GetKeyDown(KeyCode.E)){
-                coll.gameObject.GetComponent<PlayerCharacteristics>().hunger += 30;
-                if (coll.gameObject.GetComponent<PlayerCharacteristics>().hunger > 100) {
-                    coll.gameObject.GetComponent<PlayerCharacteristics>().hunger = 100;
+        if (coll.gameObject.tag == tagName)
+        {
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                playerStats.hunger += 30;
+                playerStats.Heal(30);
+                if (playerStats.hunger > 100)
+                {
+                    playerStats.hunger = 100;
                 }
                 Destroy(this.gameObject);
             }

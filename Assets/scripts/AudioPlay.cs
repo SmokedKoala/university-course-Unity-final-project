@@ -8,11 +8,13 @@ public class AudioPlay : MonoBehaviour
     public AudioClip leftStep;
     public AudioClip rightStep;
 
-    public void StepLeft(){
+    public void StepLeft()
+    {
         audioSource.PlayOneShot(leftStep);
     }
 
-    public void StepRight(){
+    public void StepRight()
+    {
         audioSource.PlayOneShot(rightStep);
     }
 

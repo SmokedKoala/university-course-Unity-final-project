@@ -14,31 +14,32 @@ public class SwitchTools : MonoBehaviour
         int previous = selectedTool;
         if (Input.GetAxis("Mouse ScrollWheel") > 0f)
         {
-            if (selectedTool >= transform.childCount -1)
+            if (selectedTool >= transform.childCount - 1)
                 selectedTool = 0;
             else
-                selectedTool ++;
+                selectedTool++;
         }
         if (Input.GetAxis("Mouse ScrollWheel") < 0f)
         {
             if (selectedTool <= 0)
-                selectedTool = transform.childCount -1;
+                selectedTool = transform.childCount - 1;
             else
-                selectedTool --;
+                selectedTool--;
         }
         if (previous != selectedTool)
             SelectTool();
     }
 
-    void SelectTool() {
+    void SelectTool()
+    {
         int i = 0;
         foreach (Transform tool in transform)
         {
-            if (i==selectedTool)
+            if (i == selectedTool)
                 tool.gameObject.SetActive(true);
             else
                 tool.gameObject.SetActive(false);
-                i++;
+            i++;
         }
     }
 }
