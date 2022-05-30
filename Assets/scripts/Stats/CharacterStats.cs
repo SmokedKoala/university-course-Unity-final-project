@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class CharacterStats : MonoBehaviour
 {
-    // Health
     public int maxHealth = 100;
     public int currentHealth { get; private set; }
 
@@ -15,7 +14,6 @@ public class CharacterStats : MonoBehaviour
         currentHealth = maxHealth;
     }
 
-    // Damage the character
     public void TakeDamage(int damage)
     {
         damage = Mathf.Clamp(damage, 0, int.MaxValue);

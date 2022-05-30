@@ -11,11 +11,14 @@ public class EnemyController : MonoBehaviour
     NavMeshAgent agent;
     CharacterCombat combat;
 
+    Animator anim;
+
     void Start()
     {
         target = PlayerManager.instance.player.transform;
         agent = GetComponent<NavMeshAgent>();
         combat = GetComponent<CharacterCombat>();
+        anim = GetComponent<Animator>();
     }
 
     void Update()
@@ -25,16 +28,21 @@ public class EnemyController : MonoBehaviour
         if (distance <= lookRadius)
         {
             agent.SetDestination(target.position);
-
+            anim.SetBool("isPlayerNear", true);
             if (distance <= agent.stoppingDistance)
             {
                 CharacterStats targetStats = target.GetComponent<CharacterStats>();
                 if (targetStats != null)
                 {
+                    anim.SetTrigger("attack");
                     combat.Attack(targetStats);
                 }
                 FaceTarget();
             }
+        }
+        else
+        {
+            anim.SetBool("isPlayerNear", false);
         }
     }
 
