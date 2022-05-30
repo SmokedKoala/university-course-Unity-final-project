@@ -5,16 +5,16 @@ using UnityEngine;
 public class GetWarm : MonoBehaviour
 {
     public string tagName;
-    private bool getWarm;
+    private bool getWarm = false;
+    private PlayerStats playerStats;
+
     private float time = 0.0f;
     private float interpolationPeriod = 2.0f;
-    // Start is called before the first frame update
     void Start()
     {
-        getWarm = false;
+        playerStats = PlayerManager.instance.player.GetComponent<PlayerStats>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         time += Time.deltaTime;
@@ -31,10 +31,10 @@ public class GetWarm : MonoBehaviour
         {
             if (getWarm)
             {
-                coll.gameObject.GetComponent<PlayerCharacteristics>().warm += 30;
-                if (coll.gameObject.GetComponent<PlayerCharacteristics>().warm > 100)
+                playerStats.warm += 30;
+                if (playerStats.warm > 100)
                 {
-                    coll.gameObject.GetComponent<PlayerCharacteristics>().warm = 100;
+                    playerStats.warm = 100;
                 }
             }
         }
